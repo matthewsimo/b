@@ -86,11 +86,9 @@ const Command: CommandModule<{}, Args> = {
       } else {
         const m = matches[0];
         if (m.item) {
-          console.log("item");
           await handleItem(m.list, m.item, e);
           return;
         } else {
-          console.log("list");
           await handleList(list);
           return;
         }
