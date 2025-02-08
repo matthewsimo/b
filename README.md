@@ -36,9 +36,13 @@ Options:
 ### Core commands
 
 - `b` - output lists and how many items exist in each
-- `b <list>` - output the list's items if it exists, if not create a new list with the given name
-- `b <item>` - look in all lists and output the item if found, output all matches if multiple
-- `b <list> <item>` - output the item from the given list
+- `b <list>` - output the list's items if it exists,
+  if not create a new list with the given name
+- `b <item>` - look in all lists and output and copy the item if found,
+  use `-e` flag to only echo it
+- `b <list> <item>` - output and copy the item from the given list to clipboard,
+  use `-e` flag to only echo it
+- `b <list> <item> <value>` - add the item with value to given list
 - `b dump` - output all known lists and all their items
 - `b remove [list] [item]` - remove the list or item
 
