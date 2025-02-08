@@ -2,6 +2,18 @@
 
 Your CLI brain - create list & items, view lists, view and copy items
 
+## Build
+
+Running `bun b` will build the cli and then copy it into your `$HOME/bin/`.
+If that's in your path, you'll be ready to start using it directly.
+
+## Manually editing saved data
+
+The CLI uses the `$HOME/.config/` convention. It stores the `/b/config.json` file
+there that acts as the persistant data store for the `b` CLI.
+
+## Usage
+
 ```bash
 Commands:
   b [list] [item] [value]     Your CLI brain - create list & items, view lists,
@@ -21,10 +33,18 @@ Options:
   -l             Look for only lists explicitely      [boolean] [default: false]
 ```
 
-## Build
+### Core commands
 
-Running `bun b` will build the cli and then copy it into your `$HOME/bin/`. If that's in your path, you'll be ready to start using it directly.
+- `b` - output lists and how many items exist in each
+- `b <list>` - output the list's items if it exists, if not create a new list with the given name
+- `b <item>` - look in all lists and output the item if found, output all matches if multiple
+- `b <list> <item>` - output the item from the given list
+- `b dump` - output all known lists and all their items
+- `b remove [list] [item]` - remove the list or item
 
-## Manually editing saved data
-
-The CLI uses the `$HOME/.config/` convention and stores the `/b/config.json` file there that acts as the persistant data store for the `b` CLI.
+> [!TIP]
+> You can use the `-e` flag for using the value in other command line commands. i.e.
+>
+> `b places new-place $(pwd)` # save the current directory as the 'new-place' item in the 'places' list
+>
+> `cd $(b places new-place -e)` # change directories to the 'new-place' item
