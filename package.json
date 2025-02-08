@@ -1,4 +1,5 @@
 {
+  "version": "0.0.1",
   "name": "b",
   "description": "Your CLI brain - create list & items, view lists, view and copy items",
   "module": "index.ts",
