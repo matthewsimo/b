@@ -46,9 +46,22 @@ Options:
 - `b dump` - output all known lists and all their items
 - `b remove [list] [item]` - remove the list or item
 
+### Tips
+
+#### Echo flag
+
 > [!TIP]
 > You can use the `-e` flag for using the value in other command line commands. i.e.
 >
-> `b places new-place $(pwd)` # save the current directory as the 'new-place' item in the 'places' list
+> `b places new-place $(pwd)` # save the current directory as the 'new-place' item
+> in the 'places' list
 >
 > `cd $(b places new-place -e)` # change directories to the 'new-place' item
+
+#### List flag
+
+> [!TIP]
+> In cases where your argument could be a list or an item, use the `-l` flag to
+> explicitely denote you're looking for lists. i.e.
+>
+> `b thing -l` # output the 'thing' list even if there are items named 'thing' too
